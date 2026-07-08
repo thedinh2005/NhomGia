@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-
+const morgan = require('morgan'); 
 // Cho phép truy cập file tĩnh (ảnh, gif, css...) trong thư mục "D:/video"
 // Lưu ý: express.static() phải trỏ tới THƯ MỤC chứa file, không trỏ thẳng vào file gif
 app.use(express.static('D:/video'));
-
+app.use(morgan('combined'));
 // CSS dùng chung cho toàn bộ trang - Cyberpunk theme
 const baseStyle = `
   <style>
